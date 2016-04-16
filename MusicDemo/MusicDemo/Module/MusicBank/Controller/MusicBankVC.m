@@ -8,6 +8,18 @@
 
 #import "MusicBankVC.h"
 #import "MusicBankTypeModel.h"
+#import "MusicBankTypeCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+#import "NewCDVC.h"
+
+
+typedef NS_ENUM(NSUInteger, MusicBankType) {
+    NewCD = 0,//新歌首发
+    Ranking,//排行
+    Singer,//歌手
+    Classification,//分类
+    Listening,//大家在听
+};
 
 @interface MusicBankVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
@@ -20,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initUI];
-    [self initDate];
+    [self initData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,15 +42,30 @@
 
 
 
+- (void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    
+}
+- (void)dealloc{
+
+    self.mTableView.delegate = nil;
+    self.mTableView.dataSource = nil;
+}
+
+
 #pragma mark - 初始化
 
 - (void)initUI{
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+//    self.edgesForExtendedLayout = UIRectEdgeAll;
+    [self.mTableView registerNib:[UINib nibWithNibName:@"MusicBankTypeCell" bundle:nil] forCellReuseIdentifier:@"MusicBankTypeCell"];
+    self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
 
 
-- (void)initDate{
+- (void)initData{
 
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
@@ -76,16 +103,49 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 0;
-    
+    return _typeArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return nil;
+    MusicBankTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MusicBankTypeCell"];
+    [cell setModel:_typeArray[indexPath.row]];
+    return cell;
 }
 
+
+#pragma mark - UITableView Delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+//    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"MusicBankTypeCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+//        
+//    }];
+    return [MusicBankTypeCell cellHeight];
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case NewCD:
+        {
+            NewCDVC *newCD = [[NewCDVC alloc]init];
+            for (UIView * view in _mNaviagtionCon.navigationBar.subviews) {
+                if (view.tag == 1001) {
+                    view.hidden = YES;
+                    break;
+                }
+            }
+            [self.mNaviagtionCon pushViewController:newCD animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
 /*
 #pragma mark - Navigation
 

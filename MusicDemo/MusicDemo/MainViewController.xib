@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mxu-ex-4ay" customClass="SwipeView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -33,13 +33,13 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Mxu-ex-4ay" secondAttribute="trailing" id="3yo-0Q-W03"/>
                 <constraint firstItem="Mxu-ex-4ay" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MWx-bN-64G"/>
-                <constraint firstItem="Mxu-ex-4ay" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r6L-nN-5ey"/>
+                <constraint firstItem="Mxu-ex-4ay" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="r6L-nN-5ey"/>
                 <constraint firstAttribute="bottom" secondItem="Mxu-ex-4ay" secondAttribute="bottom" id="uJS-Hi-2vu"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="344.5" y="35.5"/>
         </view>
-        <view contentMode="scaleToFill" id="fJr-xj-wLB" userLabel="MainNavigationBar">
+        <view tag="1001" contentMode="scaleToFill" id="fJr-xj-wLB" userLabel="MainNavigationBar">
             <rect key="frame" x="0.0" y="0.0" width="317" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -50,7 +50,9 @@
                         <constraint firstAttribute="height" constant="30" id="7cw-eY-biC"/>
                         <constraint firstAttribute="width" secondItem="cZS-KT-efg" secondAttribute="height" multiplier="37:15" id="VpJ-fW-d80"/>
                     </constraints>
-                    <state key="normal" title="音库"/>
+                    <state key="normal" title="音库">
+                        <color key="titleColor" red="0.13725490196078433" green="0.15294117647058825" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="VpJ-fW-d80"/>
@@ -66,7 +68,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="1pn-09-L1b"/>
                     </constraints>
-                    <state key="normal" title="热听"/>
+                    <state key="normal" title="热听">
+                        <color key="titleColor" red="0.13725490200000001" green="0.1529411765" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="navigationBtnClick:" destination="-1" eventType="touchUpInside" id="ndx-Pm-n2X"/>
                     </connections>
@@ -77,7 +81,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="eBw-7D-IbQ"/>
                     </constraints>
-                    <state key="normal" title="搜索"/>
+                    <state key="normal" title="搜索">
+                        <color key="titleColor" red="0.13725490200000001" green="0.1529411765" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="navigationBtnClick:" destination="-1" eventType="touchUpInside" id="AY8-07-CRh"/>
                     </connections>
@@ -88,7 +94,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="w35-cP-s3Q"/>
                     </constraints>
-                    <state key="normal" title="我的"/>
+                    <state key="normal" title="我的">
+                        <color key="titleColor" red="0.13725490200000001" green="0.1529411765" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="navigationBtnClick:" destination="-1" eventType="touchUpInside" id="F7h-Sq-qnZ"/>
                     </connections>

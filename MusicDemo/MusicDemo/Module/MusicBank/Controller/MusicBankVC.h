@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MusicBankVC : UIViewController
-
+@property (nonatomic, strong) UINavigationController *mNaviagtionCon;
 @end

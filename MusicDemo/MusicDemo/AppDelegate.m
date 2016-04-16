@@ -19,6 +19,7 @@
     // Override point for customization after application launch.
     MainViewController *mainVC = [[MainViewController alloc]init];
     UINavigationController *naCon = [[UINavigationController alloc]initWithRootViewController:mainVC];
+    [naCon.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     self.window.rootViewController = naCon;
     
     return YES;

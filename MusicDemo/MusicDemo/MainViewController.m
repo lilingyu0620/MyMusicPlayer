@@ -12,7 +12,7 @@
 #import "MusicBankVC.h"
 #import "SearchVC.h"
 #import "SwipeView.h"
-
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
 typedef NS_ENUM(NSUInteger, NavigationBarTag) {
     MUSICBANK = 0,
@@ -46,7 +46,8 @@ typedef NS_ENUM(NSUInteger, NavigationBarTag) {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self fitView];
-    [self initDate];
+    [self initUI];
+    [self initData];
 }
 
 
@@ -59,11 +60,17 @@ typedef NS_ENUM(NSUInteger, NavigationBarTag) {
 - (void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar addSubview:_mainNavigationBar];
+
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
 
+- (void)viewWillDisappear:(BOOL)animated{
+
+    [super viewWillDisappear:animated];
+}
 - (void)dealloc{
 
     self.mySwipeView.delegate = nil;
@@ -75,17 +82,28 @@ typedef NS_ENUM(NSUInteger, NavigationBarTag) {
 //屏幕适配
 - (void)fitView{
     
-    [_mainNavigationBar setFrame:CGRectMake(_mainNavigationBar.frame.origin.x, _mainNavigationBar.frame.origin.y,kScreen_Width, _mainNavigationBar.frame.size.height)];
+    [_mainNavigationBar setFrame:CGRectMake(_mainNavigationBar.frame.origin.x,20,kScreen_Width, _mainNavigationBar.frame.size.height)];
     
 }
 
-- (void)initDate{
+- (void)initUI{
+
+    [self.view addSubview:self.mainNavigationBar];
+    self.navigationController.navigationBar.hidden = YES;
+    self.fd_prefersNavigationBarHidden = YES;
+//    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+//    [self.navigationController.navigationBar addSubview:self.mainNavigationBar];
+
+}
+- (void)initData{
 
     self.mySwipeView.delegate = self;
     self.mySwipeView.dataSource = self;
     self.mySwipeView.wrapEnabled = YES;
     
     MusicBankVC *bankVC = [[MusicBankVC alloc]init];
+    bankVC.mNaviagtionCon = self.navigationController;
+    
     HotListenVC *hotVC = [[HotListenVC alloc]init];
     SearchVC *searchVC = [[SearchVC alloc]init];
     MineVC *mineVC = [[MineVC alloc]init];
@@ -111,6 +129,17 @@ typedef NS_ENUM(NSUInteger, NavigationBarTag) {
         _btnArrays = [NSArray array];
     }
     return _btnArrays;
+}
+
+
+- (UIView *)mainNavigationBar{
+
+    if (!_mainNavigationBar) {
+        NSArray *array = [[NSBundle mainBundle]loadNibNamed:@"MainViewController" owner:self options:nil];
+        _mainNavigationBar = [array lastObject];
+    }
+    
+    return _mainNavigationBar;
 }
 
 
