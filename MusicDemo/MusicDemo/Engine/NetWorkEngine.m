@@ -13,6 +13,8 @@
 @implementation NetWorkEngine
 
 + (void)jsonDataWithUrl:(NSString *)url andPara:(NSDictionary *)parameter andSuccess:(void(^)(id obj))success andFail:(void(^)(id obj))fail andView:(UIView *)view{
+    
+    NSLog(@"++++++url = %@++++++",url);
 
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {

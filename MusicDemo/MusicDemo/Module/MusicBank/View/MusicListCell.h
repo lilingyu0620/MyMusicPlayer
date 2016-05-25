@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MusicModel.h"
+#import "MCFireworksButton.h"
 
 @interface MusicListCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *favoriteNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *singerLable;
+
+- (void)setModel:(MusicModel *)model;
+@property (weak, nonatomic) IBOutlet MCFireworksButton *favoriteBtn;
 
 @end

@@ -82,6 +82,7 @@
     NewCDModel *model = _dataSourceArray[indexPath.row];
     MusicListVC *listVC = [[MusicListVC alloc]init];
     listVC.titleStr = model.title;
+    listVC.msg_id = model.msg_id;
     [self.navigationController pushViewController:listVC animated:YES];
     
 }

@@ -1,18 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MusicListCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wft-g8-pnD">
+                        <rect key="frame" x="9" y="44" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="0ly-a2-InQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.我最亲爱的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO3-db-ElA">
+                        <rect key="frame" x="70" y="14" width="242" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="YYk-fg-kth"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.13725490200000001" green="0.1529411765" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张惠妹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj1-s3-zlr">
+                        <rect key="frame" x="84" y="44" width="228" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="OZB-83-4za"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGP-XK-fbe" customClass="MCFireworksButton">
+                        <rect key="frame" x="-6" y="-17.5" width="72" height="88"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="26A-8y-uwT"/>
+                            <constraint firstAttribute="width" constant="36" id="w7N-74-Zkk"/>
+                        </constraints>
+                        <state key="normal" image="song_list_item_inlove.png">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="favoriteBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rQB-rM-88o"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Wft-g8-pnD" secondAttribute="bottom" constant="8.5" id="0wp-cB-SHT"/>
+                    <constraint firstItem="VGP-XK-fbe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="846-Lh-Y22"/>
+                    <constraint firstItem="Wft-g8-pnD" firstAttribute="top" secondItem="VGP-XK-fbe" secondAttribute="bottom" constant="3" id="9ZG-KP-KDi"/>
+                    <constraint firstItem="VGP-XK-fbe" firstAttribute="centerY" secondItem="lO3-db-ElA" secondAttribute="centerY" constant="2" id="Egd-nk-ZbM"/>
+                    <constraint firstItem="Wft-g8-pnD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="GX2-KP-sSy"/>
+                    <constraint firstItem="Wft-g8-pnD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="44" id="Nvb-oh-87K"/>
+                    <constraint firstItem="Uj1-s3-zlr" firstAttribute="top" secondItem="lO3-db-ElA" secondAttribute="bottom" constant="9" id="VQA-gU-tqv"/>
+                    <constraint firstItem="VGP-XK-fbe" firstAttribute="centerX" secondItem="Wft-g8-pnD" secondAttribute="centerX" id="cVc-uR-REe"/>
+                    <constraint firstAttribute="trailing" secondItem="Uj1-s3-zlr" secondAttribute="trailing" constant="8" id="ejH-SC-9Wt"/>
+                    <constraint firstItem="lO3-db-ElA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="62" id="fac-Ll-6Bo"/>
+                    <constraint firstItem="Uj1-s3-zlr" firstAttribute="leading" secondItem="Wft-g8-pnD" secondAttribute="trailing" constant="33" id="hQe-eM-e1P"/>
+                    <constraint firstAttribute="trailing" secondItem="lO3-db-ElA" secondAttribute="trailing" constant="8" id="sVT-3o-Ibq"/>
+                    <constraint firstItem="Uj1-s3-zlr" firstAttribute="centerY" secondItem="Wft-g8-pnD" secondAttribute="centerY" id="vWg-TK-Mi2"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="846-Lh-Y22"/>
+                        <exclude reference="9ZG-KP-KDi"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="favoriteBtn" destination="VGP-XK-fbe" id="De9-ew-Lw9"/>
+                <outlet property="favoriteNumLabel" destination="Wft-g8-pnD" id="DV9-da-v85"/>
+                <outlet property="singerLable" destination="Uj1-s3-zlr" id="Lga-N8-gOe"/>
+                <outlet property="songNameLabel" destination="lO3-db-ElA" id="N4E-Vf-Mo1"/>
+            </connections>
+            <point key="canvasLocation" x="273" y="244"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="song_list_item_inlove.png" width="72" height="88"/>
+    </resources>
 </document>

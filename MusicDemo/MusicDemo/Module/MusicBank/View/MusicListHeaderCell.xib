@@ -14,25 +14,56 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="159.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YIP-wq-Ihe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="159.5"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultold.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YIP-wq-Ihe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cf4-LZ-tY5">
-                        <rect key="frame" x="105" y="24" width="110" height="110"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.png" translatesAutoresizingMaskIntoConstraints="NO" id="cf4-LZ-tY5">
+                        <rect key="frame" x="105" y="25" width="110" height="110"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="110" id="ZU2-rg-boC"/>
                             <constraint firstAttribute="height" constant="110" id="fQX-wq-O5N"/>
+                            <constraint firstAttribute="height" constant="110" id="l2V-Kt-r6T"/>
+                            <constraint firstAttribute="width" constant="110" id="zaO-rW-enO"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="l2V-Kt-r6T"/>
+                                <exclude reference="zaO-rW-enO"/>
+                            </mask>
+                        </variation>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="YIP-wq-Ihe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="32c-Tr-Zwy"/>
-                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="centerY" secondItem="YIP-wq-Ihe" secondAttribute="centerY" id="Vtf-5C-z2C"/>
+                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="IxL-CZ-40y"/>
+                    <constraint firstAttribute="trailing" secondItem="cf4-LZ-tY5" secondAttribute="trailing" constant="105" id="Iyi-s4-Klw"/>
+                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Z9O-3o-XZO"/>
+                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="centerX" secondItem="YIP-wq-Ihe" secondAttribute="centerX" id="ZF4-tK-rfN"/>
+                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="centerY" secondItem="YIP-wq-Ihe" secondAttribute="centerY" id="bKD-VT-OL0"/>
                     <constraint firstItem="YIP-wq-Ihe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dTM-eO-wfJ"/>
+                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="e53-cv-Wbl"/>
                     <constraint firstAttribute="bottom" secondItem="YIP-wq-Ihe" secondAttribute="bottom" id="fER-AR-GPg"/>
+                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="v0E-aq-cfh"/>
+                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="105" id="vlE-HJ-4c3"/>
                     <constraint firstAttribute="trailing" secondItem="YIP-wq-Ihe" secondAttribute="trailing" id="wzi-0L-9pM"/>
-                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="centerX" secondItem="YIP-wq-Ihe" secondAttribute="centerX" id="yZd-j7-Uli"/>
+                    <constraint firstItem="cf4-LZ-tY5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xJP-Yk-DoU"/>
+                    <constraint firstAttribute="bottom" secondItem="cf4-LZ-tY5" secondAttribute="bottom" constant="24.5" id="zk8-VM-96R"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="cf4-LZ-tY5"/>
+                    </mask>
+                    <mask key="constraints">
+                        <exclude reference="IxL-CZ-40y"/>
+                        <exclude reference="Iyi-s4-Klw"/>
+                        <exclude reference="ZF4-tK-rfN"/>
+                        <exclude reference="bKD-VT-OL0"/>
+                        <exclude reference="e53-cv-Wbl"/>
+                        <exclude reference="v0E-aq-cfh"/>
+                        <exclude reference="vlE-HJ-4c3"/>
+                        <exclude reference="zk8-VM-96R"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundImageView" destination="YIP-wq-Ihe" id="Ycl-ex-uSf"/>
@@ -41,4 +72,8 @@
             <point key="canvasLocation" x="209" y="220"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="default.png" width="400" height="400"/>
+        <image name="defaultold.jpg" width="640" height="300"/>
+    </resources>
 </document>

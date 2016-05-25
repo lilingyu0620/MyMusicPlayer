@@ -13,6 +13,7 @@
 #import "SearchVC.h"
 #import "SwipeView.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
+#import "BottomPlayView.h"
 
 typedef NS_ENUM(NSUInteger, NavigationBarTag) {
     MUSICBANK = 0,
@@ -60,6 +61,22 @@ typedef NS_ENUM(NSUInteger, NavigationBarTag) {
 - (void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
+    
+//    BottomPlayView *bpv = [BottomPlayView shareBottomPlayView];
+//    [self.view addSubview:bpv];
+//    bpv.TapPlayView = ^(NSMutableArray *dataArr, NSInteger currentIndex,
+//                        NSString *pic_url, AVPlayerItem *currentItem) {
+//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        PlayViewController *pvc = [sb instantiateViewControllerWithIdentifier:@"sbPlayView"];
+//        pvc.navigation = self.navigationController;
+//        pvc.dataArr = dataArr;
+//        pvc.currentIndex = currentIndex;
+//        pvc.pic_url = pic_url;
+//        pvc.currentItem = currentItem;
+//        [self.navigationController pushViewController:pvc animated:YES];
+//    };
+//    [self.view bringSubviewToFront:bpv];
+
 
 }
 

@@ -11,5 +11,5 @@
 @interface MusicListVC : BaseVC
 
 @property (nonatomic, copy) NSString *titleStr;
-
+@property (nonatomic, copy) NSString *msg_id;
 @end

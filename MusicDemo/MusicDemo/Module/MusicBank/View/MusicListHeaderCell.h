@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface MusicListHeaderCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *cornerImageView;
+
+- (void)setModel:(NSDictionary *)headDic;
+
++ (CGFloat)cellHeight;
+
 @end
